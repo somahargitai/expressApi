@@ -1,4 +1,4 @@
-const express = require('express')
+import express from 'express';
 
 const subRouter = express.Router();
 
@@ -7,4 +7,6 @@ subRouter.get('/endpoint_4', (req, res) => {
   return res.json('hey 4');
 });
 
-module.exports = subRouter;
+export {
+  subRouter
+};
