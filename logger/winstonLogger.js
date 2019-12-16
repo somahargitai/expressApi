@@ -4,6 +4,6 @@ const logConfig = {
   'transports' : [ new winston.transports.Console() ]
 };
 
-const logger = winston. createLogger(logConfig);
+const logger = winston.createLogger(logConfig);
 
 module.exports = logger;

@@ -11,6 +11,11 @@ router.use('/', async (req, res, next) => {
 });
 
 router.get('/', (req, res) => {
+  console.log('health check')
+  return res.json('health check okay');
+});
+
+router.get('/', (req, res) => {
   return res.json('hey');
 });
 
