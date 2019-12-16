@@ -5,5 +5,4 @@ require('@babel/register')({
 
 const app = require('./server.js')
 
-
 module.exports = app;
