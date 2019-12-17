@@ -2,11 +2,11 @@ import { logger } from '../logger/winstonLogger';
 
 const endpoint1 = (req, res) => {
   console.log('/endpoint_1');
-      // logger.log('log'); - Cannot create property 'Symbol(level)' on string 'log'
-      logger.silly('silly');    //  - no log, no nothing
-      logger.debug('debug');    //  - no log, no nothing
-      logger.verbose('verbose');//  - no log, no nothing
-      logger.http('http');      //  - no log, no nothing
+  console.log('Log Levels with Winston.js:');
+  logger.silly('silly');
+  logger.debug('debug');
+  logger.verbose('verbose');
+  logger.http('http');
   logger.info('info');
   logger.warn('warn');
   logger.error('error');

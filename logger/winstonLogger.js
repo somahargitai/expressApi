@@ -1,4 +1,4 @@
-import { createLogger, format, transports,} from 'winston';
+import { createLogger, format, transports } from 'winston';
 import moment from 'moment';
 const { combine, colorize, timestamp, label, printf, simple } = format;
 
@@ -6,16 +6,16 @@ const logCongfigConsole = {
   format: combine(
     colorize(),
     timestamp(),
-    label({ label: 'right meow' }),
+    label({ label: 'express API' }),
     printf(
-      info => `[${
+      info => `${
         moment(info.timestamp)
           .format('HH:mm:ss-SSS')
-        }]   [${
+        } [${
           info.level
-        }] \t[${
+        }]\t${
           info.label
-        }]: ${
+        }: ${
           info.message
         }`
     ),
@@ -27,14 +27,14 @@ const logCongfigConsole = {
 const logConfigFile = {
   format: combine(
     timestamp(),
-    label({ label: 'left meow' }),
-    printf(info => `[${
+    label({ label: 'express API' }),
+    printf(info => `${
         info.timestamp
-      }] [${
+      } [${
         info.level
-      }] [${
+      }] ${
         info.label
-      }]: ${
+      }: ${
         info.message
       }`),
   ),
