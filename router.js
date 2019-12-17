@@ -1,6 +1,7 @@
 import express from 'express';
 
 import endpoint_1 from './routes/endpoint_1';
+import endpoint_3_loglevels from './routes/endpoint_3_loglevels';
 import { subRouter } from './routes/subRouter';
 
 const router = express.Router();
@@ -31,6 +32,9 @@ router.get('/endpoint_2', (req, res) => {
   console.info('/endpoint_2');
   return res.json('hey 2');
 });
+
+router.get('/endpoint_3_loglevels', endpoint_3_loglevels);
+
 
 export {
   router
