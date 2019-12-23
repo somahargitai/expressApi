@@ -14,3 +14,9 @@ Routing with Express Router
 - http://localhost:5000/endpoint_1
 - http://localhost:5000/endpoint_2
 - http://localhost:5000/subroute/endpoint_4
+
+## Logging
+
+Creating logs with [Winston.js](https://github.com/winstonjs/winston)
+
+- http://localhost:5000/endpoint_3_loglevels - Showing Log Levels you can use

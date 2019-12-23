@@ -1,7 +1,8 @@
-const express = require('express')
+import express from 'express';
 
-const endpoint_1 = require('./endpoint_1');
-const subrouter = require('./subRouter');
+import endpoint_1 from './routes/endpoint_1';
+import endpoint_3_loglevels from './routes/endpoint_3_loglevels';
+import { subRouter } from './routes/subRouter';
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ router.get('/', (req, res) => {
   return res.json('hey');
 });
 
-router.use('/subroute', subrouter);
+router.use('/subroute', subRouter);
 
 router.use('/endpoint_1', (req, res, next) => {
   console.log('I am routing endpoint 1');
@@ -32,4 +33,9 @@ router.get('/endpoint_2', (req, res) => {
   return res.json('hey 2');
 });
 
-module.exports = router;
+router.get('/endpoint_3_loglevels', endpoint_3_loglevels);
+
+
+export {
+  router
+};

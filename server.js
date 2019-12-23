@@ -1,14 +1,21 @@
 import express from 'express';
-import morgan from 'morgan';
+import {
+  morganLogToConsole,
+  morganLogThroughWinston,
+} from './logger/morganRouter';
 
-import router from './router';
+import { router } from './router';
+import { logger } from './logger/winstonLogger';
 
 const app = express();
 const port = 5000;
 
-app.use(morgan('dev'));
+app.use(morganLogToConsole);
+app.use(morganLogThroughWinston);
+
+// init express router
 app.use(router);
 
 app.listen(port, () => {
-  console.log(`connected on port ${port}`);
+  logger.info(`connected on port ${port}`);
 });
